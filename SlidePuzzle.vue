@@ -56,7 +56,7 @@ export default {
     },
     src: {
       type: String,
-      default: 'https://pulipulichen.github.io/Sliding-Puzzle/demo.png',
+      default: 'https://static.toiimg.com/photo/72975551.cms',
       description: 'puzzle image url',
     },
     mode: {
