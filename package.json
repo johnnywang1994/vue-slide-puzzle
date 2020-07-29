@@ -1,6 +1,6 @@
 {
   "name": "vue-slide-puzzle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "SlidePuzzle.vue",
   "repository": "https://github.com/johnnywang1994/vue-slide-puzzle.git",
   "author": "Johnny Wang <johnny29621189@kimo.com>",
