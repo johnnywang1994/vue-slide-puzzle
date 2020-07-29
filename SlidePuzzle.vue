@@ -94,9 +94,11 @@ export default {
       const ra = vm.ratio;
       if (vm.mode === 'near') {
         const freeIdIndex = this.puzzleArray.indexOf(vm.excludeId);
+        const onLeft = freeIdIndex % ra === 0;
+        const onRight = freeIdIndex % ra === ra - 1;
         return [
-          freeIdIndex+1,
-          freeIdIndex-1,
+          onRight ? -1 : freeIdIndex+1,
+          onLeft ? -1 : freeIdIndex-1,
           freeIdIndex+ra,
           freeIdIndex-ra,
         ].filter(i => i >= 0);
