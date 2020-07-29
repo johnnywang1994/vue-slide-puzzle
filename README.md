@@ -2,6 +2,10 @@
 
 A vue component to create a slide puzzle game, be aware that this plugin need to install sass related loader.
 
+> Mobile touch events supported.
+
+> See [Live Demo](https://johnnywang1994.github.io/slide-puzzle)
+
 
 ## Install
 
@@ -29,6 +33,7 @@ export default {
 ```html
 <template>
   <div id="app">
+    <!-- Give a wrapper to set width, height for puzzle -->
     <div style="width: 400px;height: 300px;">
       <slide-puzzle :ratio="3" mode="near" />
     </div>
@@ -81,7 +86,7 @@ puzzle wrapper css styles
 
 ### src
 
-puzzle image url
+puzzle image url, will be `watched` inside the component once changed value. So could be used to rerender the puzzle. See [Live Demo Source Code](https://github.com/johnnywang1994/slide-puzzle)
 
   - type: `String`
   - default: `https://static.toiimg.com/photo/72975551.cms`

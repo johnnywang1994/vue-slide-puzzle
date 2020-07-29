@@ -1,5 +1,5 @@
 <template>
-  <div class="slide-puzzle" :style="puzzleStyle">
+  <div class="slide-puzzle" :style="puzzleStyle" :key="`pz_${puzzleKey}`">
     <div
       v-for="(id, index) in puzzleArray"
       :key="`card_${id}`"
@@ -74,12 +74,19 @@ export default {
   },
   data() {
     return {
+      puzzleKey: 0,
       puzzleArray: [],
       dragTargetId: 0,
       dragTargetIndex: 0,
       excludeId: 1, // id to exclude
       touchOverEl: null,
     };
+  },
+  watch: {
+    src(newSrc, oldSrc) {
+      if (newSrc === oldSrc) return;
+      this.initPuzzle();
+    },
   },
   computed: {
     allowedCardIndex() {
@@ -116,6 +123,7 @@ export default {
     // Init Events
     initPuzzle() {
       const vm = this;
+      vm.puzzleKey = Math.random();
       vm.puzzleArray = Array(Math.pow(vm.ratio, 2)).fill().map((t, i) => i + 1);
       if (vm.randomExclude) {
         vm.excludeId = Math.ceil(Math.random() * vm.puzzleArray.length);
