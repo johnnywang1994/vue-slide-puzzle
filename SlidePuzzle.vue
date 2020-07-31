@@ -12,7 +12,7 @@
       :draggable="id !== excludeId && !gameSuccess"
       :data-id="id"
       @touchstart="onCardDragStart($event, id, index)"
-      @touchmove="onTouchMove($event, id, index)"
+      @touchmove.prevent="onTouchMove($event, id, index)"
       @touchend="onTouchEnd($event, id, index)"
       @dragstart="onCardDragStart($event, id, index)"
       @dragenter="onCardDragEnter($event, id, index)"
@@ -166,6 +166,18 @@ export default {
       list.splice(index1,1,...list.splice(index2, 1 , list[index1]));
     },
     // Drag Events
+    fixBody(isFix = true) {
+      if (window) {
+        const docEl = document.documentElement || document.body;
+        if (isFix) {
+          docEl.style.position = 'fixed';
+          docEl.style.top = `-${window.scrollY}px`;
+        } else {
+          docEl.style.position = null;
+          docEl.style.top = null;
+        }
+      }
+    },
     addAlert(node, bool = false) {
       node.style.outline = (bool || this.mode === 'free')
         ? '2px #17e000 solid'
@@ -178,6 +190,7 @@ export default {
     },
     onCardDragStart(ev, id, index) {
       const vm = this;
+      vm.fixBody();
       vm.dragTargetId = id;
       vm.dragTargetIndex = index;
       vm.$emit('card-dragstart', {event: ev, id, index, ...vm.$state});
@@ -202,6 +215,7 @@ export default {
       const vm = this;
       const notAllowed = vm.allowedCardIndex.indexOf(vm.dragTargetIndex) < 0;
       vm.removeAlert(ev.target);
+      vm.fixBody(false);
       if (vm.mode !== 'free') {
         if (dropId !== vm.excludeId || notAllowed) return;
       }
@@ -229,6 +243,7 @@ export default {
       const dropId = Number(vm.touchOverEl.dataset.id);
       const notAllowed = vm.allowedCardIndex.indexOf(vm.dragTargetIndex) < 0;
       vm.removeAlert(vm.touchOverEl);
+      vm.fixBody(false);
       if (vm.mode !== 'free') {
         if (dropId !== vm.excludeId || notAllowed) return;
       }
