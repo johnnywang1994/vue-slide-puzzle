@@ -171,9 +171,11 @@ export default {
         const docEl = document.documentElement || document.body;
         if (isFix) {
           docEl.style.position = 'fixed';
+          docEl.style.width = '100%';
           docEl.style.top = `-${window.scrollY}px`;
         } else {
           docEl.style.position = null;
+          docEl.style.width = null;
           docEl.style.top = null;
         }
       }
