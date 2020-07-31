@@ -192,7 +192,7 @@ export default {
     },
     onCardDragStart(ev, id, index) {
       const vm = this;
-      vm.fixBody();
+      !vm.gameSuccess && vm.fixBody();
       vm.dragTargetId = id;
       vm.dragTargetIndex = index;
       vm.$emit('card-dragstart', {event: ev, id, index, ...vm.$state});
