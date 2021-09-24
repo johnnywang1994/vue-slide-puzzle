@@ -1,8 +1,28 @@
 {
   "name": "vue-slide-puzzle",
   "version": "1.0.4",
-  "main": "SlidePuzzle.vue",
-  "repository": "https://github.com/johnnywang1994/vue-slide-puzzle.git",
   "author": "Johnny Wang <johnny29621189@kimo.com>",
+  "main": "dist/vue-slide-puzzle.umd.min.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name VueSlidePuzzle src/main.js",
+    "lint": "vue-cli-service lint"
+  },
+  "repository": "https://github.com/johnnywang1994/vue-slide-puzzle.git",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
   "license": "MIT"
 }

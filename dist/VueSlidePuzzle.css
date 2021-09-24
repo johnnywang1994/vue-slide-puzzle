@@ -1,0 +1,1 @@
+.slide-puzzle{display:flex;flex-wrap:wrap;background:#000}.slide-puzzle .card{box-sizing:border-box;background-repeat:no-repeat;transition:transform .2s}.slide-puzzle .card.pin{background:transparent!important}.slide-puzzle .card:not(.pin):not(.over):hover{transform:scale(1.05);cursor:pointer}
