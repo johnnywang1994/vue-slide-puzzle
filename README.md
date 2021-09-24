@@ -19,6 +19,7 @@ import component
 
 ```js
 import { VueSlidePuzzle } from 'vue-slide-puzzle';
+import 'vue-slide-puzzle/dist/VueSlidePuzzle.css';
 
 export default {
   components: {
@@ -42,6 +43,7 @@ export default {
 
 <script>
 import { VueSlidePuzzle } from 'vue-slide-puzzle';
+import 'vue-slide-puzzle/dist/VueSlidePuzzle.css';
 
 export default {
   components: {

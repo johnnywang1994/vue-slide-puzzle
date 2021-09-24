@@ -2,7 +2,7 @@
   "name": "vue-slide-puzzle",
   "version": "1.0.6",
   "author": "Johnny Wang <johnny29621189@kimo.com>",
-  "main": "dist/vue-slide-puzzle.umd.min.js",
+  "main": "dist/VueSlidePuzzle.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name VueSlidePuzzle src/main.js",
