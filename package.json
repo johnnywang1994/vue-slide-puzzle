@@ -1,6 +1,6 @@
 {
   "name": "vue-slide-puzzle",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Johnny Wang <johnny29621189@kimo.com>",
   "main": "dist/VueSlidePuzzle.umd.min.js",
   "scripts": {
