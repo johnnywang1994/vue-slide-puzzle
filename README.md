@@ -18,11 +18,11 @@ yarn add vue-slide-puzzle
 import component
 
 ```js
-import SlidePuzzle from 'vue-slide-puzzle';
+import { VueSlidePuzzle } from 'vue-slide-puzzle';
 
 export default {
   components: {
-    SlidePuzzle
+    VueSlidePuzzle
   }
 };
 ```
@@ -41,12 +41,12 @@ export default {
 </template>
 
 <script>
-import SlidePuzzle from 'vue-slide-puzzle';
+import { VueSlidePuzzle } from 'vue-slide-puzzle';
 
 export default {
   components: {
-    SlidePuzzle,
-  },
+    VueSlidePuzzle
+  }
 };
 </script>
 ```
@@ -145,11 +145,11 @@ If we want to count the user's steps, we can use `card-drop` and `card-touchend`
 </template>
 
 <script>
-import SlidePuzzle from 'vue-slide-puzzle';
+import { VueSlidePuzzle } from 'vue-slide-puzzle';
 
 export default {
   components: {
-    SlidePuzzle,
+    VueSlidePuzzle
   },
   data() {
     return {
